@@ -1,0 +1,27 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Backpack","Ocean")
+
+local CoreGui = game:GetService("StarterGui")
+
+
+local Main = Window:NewTab("Backpack")
+local MainSection = Main:NewSection("backpack")
+MainSection:NewButton("Im a damn backpack", "Im a damn backpack", function()
+spawn(function()
+
+_G.chatspam = true
+
+while _G.chatspam == true do
+	
+	local args = {
+	[1] = "Im a damn backpack",
+	[2] = "All"
+	}
+
+	game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	wait()
+end
+
+end)
+
+end)
